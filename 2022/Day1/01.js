@@ -1,13 +1,21 @@
 // Day one
 // Input data
 var fs = require('fs');
-var msg;
-fs.readFile('./test.txt', 'utf-8', function (err, data) {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    msg = data.split('\n');
-    console.log(msg);
-});
 
+let input = fs.readFileSync('./test.txt', 'utf-8')
+
+let inputArr = input.split('\n');
+let elfSigma = []
+
+let elf = 0
+for (let i in inputArr) {
+  if(inputArr[i] == ''){
+    elfSigma.push(elf)
+    elf = 0
+      }
+  else {
+    elf += inputArr[i]
+  }
+  // console.log(inputArr[i])
+}
+console.log(elfSigma)
