@@ -58,3 +58,4 @@ def solution2(pairs:list) -> list:
     for line in lines)
 
 print(solution2(lines))
+
